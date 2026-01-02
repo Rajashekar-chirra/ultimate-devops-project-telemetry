@@ -800,7 +800,7 @@ services:
     user: 0:0
     volumes:
       - ${HOST_FILESYSTEM}:/hostfs:ro
-      - ${DOCKER_SOCK}:/var/run/docker.sock:ro
+      - ${DOCKER_SOCK}:/var/run/docker.sock:rw
       - ${OTEL_COLLECTOR_CONFIG}:/etc/otelcol-config.yml
       - ${OTEL_COLLECTOR_CONFIG_EXTRAS}:/etc/otelcol-config-extras.yml
     ports:
