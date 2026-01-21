@@ -135,7 +135,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	
+
 	err = runtime.Start(runtime.WithMinimumReadMemStatsInterval(time.Second))
 	if err != nil {
 		log.Fatal(err)
@@ -243,6 +243,7 @@ func (p *productCatalog) ListProducts(ctx context.Context, req *pb.Empty) (*pb.L
 
 	span.SetAttributes(
 		attribute.Int("app.products.count", len(catalog)),
+		
 	)
 	return &pb.ListProductsResponse{Products: catalog}, nil
 }
