@@ -185,7 +185,7 @@ func readProductFiles() ([]*pb.Product, error) {
 	if err != nil {
 		return nil, err
 	}
-	
+
 
 	jsonFiles := make([]fs.FileInfo, 0, len(entries))
 	for _, entry := range entries {
@@ -297,6 +297,7 @@ func (p *productCatalog) SearchProducts(ctx context.Context, req *pb.SearchProdu
 	)
 	return &pb.SearchProductsResponse{Results: result}, nil
 }
+
 
 func (p *productCatalog) checkProductFailure(ctx context.Context, id string) bool {
 	if id != "OLJCESPC7Z" {
