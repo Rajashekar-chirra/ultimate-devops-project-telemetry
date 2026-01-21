@@ -185,6 +185,7 @@ func readProductFiles() ([]*pb.Product, error) {
 	if err != nil {
 		return nil, err
 	}
+	
 
 	jsonFiles := make([]fs.FileInfo, 0, len(entries))
 	for _, entry := range entries {
