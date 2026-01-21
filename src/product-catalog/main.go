@@ -128,6 +128,7 @@ func main() {
 		}
 		log.Println("Shutdown meter provider")
 	}()
+	
 	openfeature.AddHooks(otelhooks.NewTracesHook())
 	err := openfeature.SetProvider(flagd.NewProvider())
 	if err != nil {
