@@ -86,7 +86,8 @@ jobs:
 
       - name: update tag 
         run: |
-            sed -i 's/image: .*/image: ankrish/product-cat:${{github.run_id}}/'kubernetes/productcatalog/deployment.yaml
+          sed -i 's|image: .*|image: ankrish/product-cat:${{ github.run_id }}|' kubernetes/productcatalog/deployment.yaml
+
 
       - name: commit and push changes
         run: |
