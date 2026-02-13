@@ -38,6 +38,11 @@ jobs:
       - name: check out the code
         uses: actions/checkout@v4
 
+      - name: Install golangci-lint
+        uses: golangci/golangci-lint-action@v3
+        with:
+          version: v1.54
+        
       - name: run go lint
         run: |
           go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
