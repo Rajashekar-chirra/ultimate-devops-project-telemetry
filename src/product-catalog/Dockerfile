@@ -24,8 +24,9 @@ FROM alpine AS release
 
 WORKDIR /usr/src/app/
 
-COPY src/product-catalog/go.mod src/product-catalog/go.sum ./
-COPY src/product-catalog/products ./products/
+COPY go.mod go.sum ./
+COPY products/ ./products/
+
 
 
 ENV PRODUCT_CATALOG_PORT=8088
